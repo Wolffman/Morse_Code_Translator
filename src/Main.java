@@ -12,7 +12,7 @@ public class Main {
     }
 
     String[][] arrays = new String[][]
-            {  {"a", ".-"},
+            {       {"a", ".-"},
                     {"b", "-..."},
                     {"c", "-.-."},
                     {"d", "-.."},
