@@ -4,7 +4,10 @@
 import java.util.Scanner;
 import java.io.*;
 import sun.audio.*;
-public class Main {
+
+import javax.swing.*;
+
+public class Main extends JPanel{
     public static String getString(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter english or morse code to translate");
@@ -45,6 +48,14 @@ public class Main {
 
     public static void main(String[] args) {
 
+            JFrame window = new JFrame("Morse Code Translator");
+            window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            window.setBounds(0, 0, 1000, 800); //(x, y, w, h)
+            Main panel = new Main();
+            panel.setFocusable(true);
+            panel.grabFocus();
+            window.add(panel);
+            window.setVisible(true);
 
     }
 
