@@ -14,4 +14,5 @@ public class Sounds {
         AudioStream audioStream = new AudioStream(wav);
         AudioPlayer.player.start(audioStream);
     }
+
 }
