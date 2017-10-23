@@ -34,7 +34,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -57,30 +59,39 @@ public class FXMLExample extends Application {
         label.setId("Morse Code");
         root.getChildren().add(label);
 
-        Label label2 = new Label(" ");
-        label.setId("space");
+        Label blank = new Label(" ");
+        blank.setId("space");
+        root.getChildren().add(blank);
+
+        Label label2 = new Label("English Translation");
+        label2.setId("English Translation");
         root.getChildren().add(label2);
 
-        Label label3 = new Label("English Translation");
-        label.setId("English Translation");
+        Label blank2 = new Label(" ");
+        blank2.setId("space");
+        root.getChildren().add(blank2);
+
+        Label label3 = new Label("code");
+        label3.setId("code");
         root.getChildren().add(label3);
 
-        Label label4 = new Label(" ");
-        label.setId("space");
+        Label blank3 = new Label(" ");
+        blank3.setId("space");
+        root.getChildren().add(blank3);
+
+
+        Label label4 = new Label("enter text here");
+        label4.setId("userTextbox");
         root.getChildren().add(label4);
 
-        Label label5 = new Label("code");
-        label.setId("code");
-        root.getChildren().add(label5);
+        TextArea text = new TextArea("enter text here");
+        text.setId("userTextbox");
+        root.getChildren().add(text);
 
-        Label label6 = new Label(" ");
-        label.setId("space");
-        root.getChildren().add(label6);
+        Button go = new Button("go");
+        go.setId("enterbutton");
+        root.getChildren().add(go);
 
-
-        Label label7 = new Label("enter text here");
-        label.setId("userTextbox");
-        root.getChildren().add(label7);
 
         stage.setTitle("FXML Welcome");
         stage.setScene(new Scene(root, 300, 275));
