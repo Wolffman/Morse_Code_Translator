@@ -32,17 +32,17 @@
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicBorders;
 
 public class FXMLExample extends Application {
     
@@ -54,46 +54,41 @@ public class FXMLExample extends Application {
     public void start(Stage stage) throws Exception {
 //        Parent root = FXMLLoader.load(getClass().getResource("/Users/student/IdeaProjects/Morse_Code_Translator1/res/fxml_example.fxml"));
 
-        VBox root = new VBox();
-        Label label = new Label("Morse Code");
-        label.setId("Morse Code");
+
+        VBox root= new VBox();
+        root.setAlignment(Pos.CENTER);
+
+
+
+//        VBox root = new VBox();
+
+
+        Label label = new Label("Morse Code Translation");
+        label.setId("outputText");
+        //label.setStyle("-fx-padding: 0 0 0 110;" +"");
         root.getChildren().add(label);
 
-        Label blank = new Label(" ");
-        blank.setId("space");
-        root.getChildren().add(blank);
+//        Label label3 = new Label("code");
+//        label3.setId("code");
+//        //label3.setStyle("-fx-padding: 120 10 10 130;" +"");
+//        root.getChildren().add(label3);
 
-        Label label2 = new Label("English Translation");
-        label2.setId("English Translation");
-        root.getChildren().add(label2);
-
-        Label blank2 = new Label(" ");
-        blank2.setId("space");
-        root.getChildren().add(blank2);
-
-        Label label3 = new Label("code");
-        label3.setId("code");
-        root.getChildren().add(label3);
-
-        Label blank3 = new Label(" ");
-        blank3.setId("space");
-        root.getChildren().add(blank3);
-
-
-        Label label4 = new Label("enter text here");
-        label4.setId("userTextbox");
-        root.getChildren().add(label4);
-
-        TextArea text = new TextArea("enter text here");
-        text.setId("userTextbox");
+        root.setSpacing(20);
+        TextArea text = new TextArea("");
+        text.setId("inputText");
+//        text.setMinHeight(0);
+        text.setMaxHeight(100);
+//        text.setMinWidth(0);
+        text.setMaxWidth(200);
         root.getChildren().add(text);
 
-        Button go = new Button("go");
-        go.setId("enterbutton");
+        Button go = new Button("Translate!");
+        go.setId("translation");
+        go.setStyle("-fx-padding: 5 5 5 5;" +"");
         root.getChildren().add(go);
 
 
-        stage.setTitle("FXML Welcome");
+        stage.setTitle("Morse Code/English Translator");
         stage.setScene(new Scene(root, 300, 275));
         stage.show();
     }
