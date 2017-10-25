@@ -38,13 +38,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Timer;
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import static javafx.geometry.HPos.RIGHT;
 import javafx.geometry.Insets;
@@ -60,6 +67,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javax.swing.*;
+import java.util.*;
 import javax.swing.plaf.basic.BasicBorders;
 
 public class FXMLExample extends Application {
@@ -108,9 +116,21 @@ public class FXMLExample extends Application {
         go.setStyle("-fx-padding: 5 5 5 5;" +"");
         root.getChildren().add(go);
 
+        go.setOnMouseClicked(e->{
+            if (text.getText().contains(".") || text.getText().contains("-")) {
+
+            } else {
+
+            }
+            Main.translate(text.getText());
+        });
+
+
+
 
         stage.setTitle("Morse Code/English Translator");
         stage.setScene(new Scene(root, 300, 275));
         stage.show();
     }
+
 }
