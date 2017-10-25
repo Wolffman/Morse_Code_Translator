@@ -38,6 +38,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -111,6 +112,8 @@ public class FXMLExample extends Application {
         text.setMaxHeight(100);
 //        text.setMinWidth(0);
         text.setMaxWidth(200);
+
+
         root.getChildren().add(text);
 
         Button go = new Button("Translate!");
@@ -119,15 +122,14 @@ public class FXMLExample extends Application {
         root.getChildren().add(go);
 
         go.setOnMouseClicked(e->{
-            if (text.getText().contains(".") || text.getText().contains("-")) {
-
-            } else {
-
-            }
-            Main.translate(text.getText());
+            label.setText(Main.translate(text.getText()));
         });
 
-
+        text.setOnKeyPressed(e->{
+            if (e.getCode() == KeyCode.ENTER)  {
+                label.setText(Main.translate(text.getText()));
+            }
+        });
 
 
         stage.setTitle("Morse Code/English Translator");

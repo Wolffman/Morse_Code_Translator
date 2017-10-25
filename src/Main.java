@@ -72,23 +72,24 @@ public class Main {
     public static void main(String[] args,String input) {
 
     }
-    public static void translate(String input){
+    public static String translate(String input){
         setup();
 //        drawTree(codeTree);
         System.out.println(input);
         if (input.contains("-")) {
             try {
-                System.out.println(translateToLetter(input));
+                return (translateToLetter(input));
             } catch (InvalidException e) {
-                System.out.println("Invalid characters! Only use dots, dashes, and slashes");
+                return ("Invalid characters! Only use dots, dashes, and slashes");
             }
         } else {
             try {
                 String temp = translateToCode(input);
-                System.out.println(temp);
                 playSound(toSoundList(temp));
+                return (temp);
+
             } catch (InvalidException e) {
-                System.out.println("Invalid characters! Only use A-Z and spaces");
+                return ("Invalid characters! Only use A-Z and spaces");
             }
         }
 
