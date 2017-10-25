@@ -39,8 +39,26 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import static javafx.geometry.HPos.RIGHT;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicBorders;
 
@@ -57,6 +75,7 @@ public class FXMLExample extends Application {
 
         VBox root= new VBox();
         root.setAlignment(Pos.CENTER);
+        root.setStyle("-fx-background-color: #42f4d9");
 
 
 
@@ -64,6 +83,8 @@ public class FXMLExample extends Application {
 
 
         Label label = new Label("Morse Code Translation");
+        label.setTextFill(Color.ORANGERED);
+        label.setFont(Font.font("Trattatello", FontWeight.NORMAL, 22));
         label.setId("outputText");
         //label.setStyle("-fx-padding: 0 0 0 110;" +"");
         root.getChildren().add(label);
