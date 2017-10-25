@@ -56,7 +56,18 @@ public class Main {
             {"33", "7", "--..."},
             {"34","8","---.."},
             {"35","9","----."},
-            {"36","0","-----"}};
+            {"36","0","-----"},
+            {"37", ".", ".-.-.-"},
+            {"38", ",", "--..--"},
+            {"39", ":", "---..."},
+            {"40", "?", "..--.."},
+            {"41", "'", ".----."},
+            {"42", "-", "-....-"},
+            {"43","/","-..-."},
+            {"44","\"",".-..-."},
+            {"45","@",".--.-."},
+            {"46","=","-...-"}
+    };
 
     public static void main(String[] args,String input) {
 
@@ -65,7 +76,7 @@ public class Main {
         setup();
 //        drawTree(codeTree);
         System.out.println(input);
-        if (input.contains(".") || input.contains("-")) {
+        if (input.contains("-")) {
             try {
                 System.out.println(translateToLetter(input));
             } catch (InvalidException e) {
