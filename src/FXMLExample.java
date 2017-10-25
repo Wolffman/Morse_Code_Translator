@@ -84,6 +84,8 @@ public class FXMLExample extends Application {
         VBox root= new VBox();
         root.setAlignment(Pos.CENTER);
         root.setStyle("-fx-background-color: #42f4d9");
+        root.getStylesheets().add(getClass().getResource("something.css").toExternalForm());
+
 
 
 
