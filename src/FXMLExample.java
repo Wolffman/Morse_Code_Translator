@@ -97,6 +97,9 @@ public class FXMLExample extends Application {
         label.setTextFill(Color.ORANGERED);
         label.setFont(Font.font("Trattatello", FontWeight.NORMAL, 22));
         label.setId("outputText");
+        label.setWrapText(true);
+        label.setAlignment(Pos.CENTER);
+        label.setMaxWidth(400);
         //label.setStyle("-fx-padding: 0 0 0 110;" +"");
         root.getChildren().add(label);
 
@@ -109,9 +112,9 @@ public class FXMLExample extends Application {
         TextArea text = new TextArea("");
         text.setId("inputText");
 //        text.setMinHeight(0);
-        text.setMaxHeight(100);
+        text.setMaxHeight(180);
 //        text.setMinWidth(0);
-        text.setMaxWidth(200);
+        text.setMaxWidth(400);
 
 
         root.getChildren().add(text);
@@ -133,7 +136,7 @@ public class FXMLExample extends Application {
 
 
         stage.setTitle("Morse Code/English Translator");
-        stage.setScene(new Scene(root, 300, 275));
+        stage.setScene(new Scene(root, 480, 640));
         stage.show();
     }
 
